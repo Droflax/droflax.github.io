@@ -42,7 +42,7 @@ const chars = [
     { name: "Nico Robin", image: "Img/Medals/Robin.png", class: ["Especialista", "DPS", "Fruta del Diablo", "Mugiwara", "Mujer", "Pelo Negro"] },
     { name: "Roronoa Zoro", image: "Img/Medals/Zoro.png", class: ["Espadachin", "Bruiser", "Mugiwara", "Pelo Verde", "Supernova"] },
     //{ name: "Ryuma", image: "Img/Medals/Ryuma.png", class: ["Espadachin", "DPS"] },
-    { name: "Scratchmen Apoo", image: "Img/Medals/Apoo.png", class: ["Tirador", "Soporte", "Supernova", "Fruta del Diablo", "Pelo Naranja"] },
+    { name: "Scratchmen Apoo", image: "Img/Medals/Apoo.png", class: ["Tirador", "Soporte", "Supernova", "Fruta del Diablo"] },
     { name: "Smoker", image: "Img/Medals/Smoker.png", class: ["Luchador", "Tanque", "Fruta del Diablo", "Marine", "Pelo Blanco"] },
     { name: "Trafalgar Law", image: "Img/Medals/Law.png", class: ["Especialista", "Espadachin", "DPS", "Fruta del Diablo", "Supernova", "Pelo Negro"] },
     { name: "Urouge", image: "Img/Medals/Urouge.png", class: ["Luchador", "Tanque", "Fruta del Diablo", "Supernova", "Pelo Negro"] },
