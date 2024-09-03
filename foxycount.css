@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+    --background: #03305e;
+    --border: #5c7292;
+    --foreground: #0a4d8b;
+}
+
+
+html, body {
+    width: 100svw;
+    height: 100svh;
+    margin: 0;
+}
+
+.background {
+    background-color: var(--background);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color: var(--foreground);
+    width: 95%;
+    height: 90%;
+    border: 1px solid var(--border);
+    border-radius: 3vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 0;
+    gap: 10px;
+}
+
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-bar>div:hover {
+    transform: scale(90%);
+    cursor: pointer;
+}
+
+.chars-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    overflow-y: scroll;
+    box-shadow: 0 0 0 1px var(--border);
+    border-radius: 3vh;
+    padding: 1px;
+}
+
+
+.chars-container::-webkit-scrollbar {
+    width: 1vw;
+}
+
+.chars-container::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+.chars-container::-webkit-scrollbar-thumb {
+    background-color: var(--foreground);
+    border-radius: 3vh;
+    border: 3px solid var(--background);
+}
+
+
+.chars {
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-columns: repeat(auto-fit, 90px);
+    padding: 10px;
+    gap: 20px;
+    margin-left: 10px;
+}
+
+.char {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    height: 110px;
+    width: 90px;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: contain;
+    justify-content: flex-end;
+    user-select: none;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position:center;
+    justify-content: flex-end;
+    user-select: none;
+    height: 130px;
+    width: 110px;
+    background-size: 75%;
+}
+
+#espadachin {
+    background-image: url('Img/Class/Espadachin.png');
+}
+#luchador {
+    background-image: url('Img/Class/Luchador.png');
+}
+#tirador {
+    background-image: url('Img/Class/Tirador.png');
+}
+#especialista {
+    background-image: url('Img/Class/Especialista.png');
+}
+#soporte {
+    background-image: url('Img/Class/Soporte.png');
+}
+#bruiser {
+    background-image: url('Img/Class/Bruiser.png');
+}
+#dps {
+    background-image: url('Img/Class/DPS.png');
+}
+#tanque {
+    background-image: url('Img/Class/Tanque.png');
+}
+#marine {
+    background-image: url('Img/Class/Marina.png');
+}
+#realeza {
+    background-image: url('Img/Class/Realeza.png');
+}
+#mugiwara {
+    background-image: url('Img/Class/Mugiwara.png');
+}
+#supernova {
+    background-image: url('Img/Class/Supernova.png');
+}
+#pelonegro {
+    background-image: url('Img/Hair/PeloNegro.png');
+}
+#pelorubio {
+    background-image: url('Img/Hair/PeloRubio.png');
+}
+#peloblanco {
+    background-image: url('Img/Hair/PeloBlanco.png');
+}
+#pelonaranja {
+    background-image: url('Img/Hair/PeloNaranja.png');
+}
+#peloverde {
+    background-image: url('Img/Hair/PeloVerde.png');
+}
+#pelorojo {
+    background-image: url('Img/Hair/PeloRojo.gif');
+}
+#blackcats {
+    background-image: url('Img/Crew/BlackCats.png');
+}
+#buggy {
+    background-image: url('Img/Crew/Buggy.png');
+}
+#armada {
+    background-image: url('Img/Crew/Armada.png');
+}
+#gyojin {
+    background-image: url('Img/Crew/Gyojin.png');
+}
+
+
+.title {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    width: 120px;
+    text-align: center;
+}
+
+.firma {
+    position:fixed;
+    color: rgb(235, 41, 41);
+    font-family: "Roboto", sans-serif;
+    bottom:0;
+    right: 50%;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.rot-bt {
+    position:absolute;
+    left: 0;
+    top: 0.3%;
+    margin: 1.2%;
+    background-color: #03305e;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(1.2);
+    border: 2px solid #5c7292;
+    border-radius: 100%;
+    flex-direction: column;
+    user-select: none;
+}
+
+.rot-bt span{
+    font-weight: 200;
+    font-style: normal;
+    font-size: 207%;
+    opacity: 90%;
+}
+
+.rot-bt:hover {
+    cursor: pointer;
+    filter: brightness(2);
+}
+
+.bordeCont{
+    border: 1px solid white;
+    border-radius: 1vw;
+    background-color:#0d66b9;
+}
