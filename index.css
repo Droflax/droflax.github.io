@@ -179,3 +179,22 @@ html, body {
 a{
     text-decoration: none;
 }
+
+@media screen and (max-width: 1366px) {
+    .contEnlaces{
+        font-size: 0.74rem;
+        height: 44%;
+        width: 74%;
+    }
+    .enlaces{
+        height: 46%;
+        margin-bottom: 3%;
+        justify-content: space-between;
+    }
+    .cont{
+        margin: 1.9%;
+    }
+    .cont p{
+        font-size: 1.1rem;
+    }
+}

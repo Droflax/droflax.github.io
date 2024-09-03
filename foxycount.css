@@ -238,3 +238,10 @@ html, body {
     border-radius: 1vw;
     background-color:#0d66b9;
 }
+
+@media screen and (max-width: 1366px) {
+    .cont{
+        height: 100px;
+        width: 84.62px;
+    }    
+}
