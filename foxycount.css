@@ -197,7 +197,8 @@ html, body {
     color: rgb(235, 41, 41);
     font-family: "Roboto", sans-serif;
     bottom:0;
-    right: 50%;
+    width: 100%;
+    text-align-last: center;
     font-size: 0.8rem;
     font-weight: bolder;
     cursor: pointer;
@@ -244,4 +245,52 @@ html, body {
         height: 100px;
         width: 84.62px;
     }    
+}
+@media (max-width: 768px) {
+    .main{
+        width: 100%;
+        height: 95%;
+        border: 1px solid var(--border);
+        border-radius: unset;
+        display: flex;
+        flex-direction: column;
+        padding: unset;
+        padding-top: unset;
+        gap: 10px;
+        top: 0;
+        position: absolute;
+    }
+    .rot-bt{
+        z-index: 7;
+        left: 0%;
+        top: 0%;
+    }
+    .search-bar{
+        margin-top: 11%;
+    }
+    .cont{
+        background-size: 50%;
+        height: 10vh;
+        width: 17%;
+        margin-top: -6%;
+    }
+    .chars{
+        padding: unset;
+        grid-template-columns: repeat(auto-fit, 45px);
+        margin-left: 1px;
+    }
+    .char{
+        height: 104px;
+        width: 65px;
+    }
+    .title{
+        width: 60px;
+    }
+    .chars-container{
+        padding: unset;
+        border-radius: 2vh;
+    }
+    .chars-container::-webkit-scrollbar {
+        width: inherit;
+    }
 }

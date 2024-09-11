@@ -100,6 +100,8 @@ html, body {
     font-family: "Roboto", sans-serif;
     bottom:0;
     font-size: 0.8rem;
+    width: 100%;
+    text-align-last: center;
     font-weight: bolder;
     cursor: pointer;
 }
@@ -261,9 +263,5 @@ a{
         width: 42%;
         font-size: 0.54rem;
         height: 44%;
-    }
-    .firma{
-        width: 100%;
-        text-align-last: center;
     }
 }
