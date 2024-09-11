@@ -216,8 +216,8 @@ a{
         flex-direction: row;
         position: absolute;
         height: 23%;
-        width: 49%;
-        max-width: 49%;
+        width: 47%;
+        max-width: 48%;
     }
     .der{
         right: 1%;
@@ -257,5 +257,14 @@ a{
         background-size: 250%;
         background-position-y: -17%;
         background-position-x: 50%;
+    }
+    .contEnlaces{
+        width: 42%;
+        font-size: 0.54rem;
+        height: 44%;
+    }
+    .firma{
+        width: 100%;
+        text-align-last: center;
     }
 }
