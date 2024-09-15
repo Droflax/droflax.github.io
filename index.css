@@ -197,8 +197,10 @@ a{
 .event-image {
     max-width: 300px;
     height: auto;
+    user-select: none;
 }
 .time-remaining {
+    user-select: none;
     position: absolute;
     bottom: 0px;
     font-size: 20px;
@@ -209,6 +211,7 @@ a{
     text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
 .event-title{
+    user-select: none;
     position: absolute;
     top: -44px;
     color: white;
