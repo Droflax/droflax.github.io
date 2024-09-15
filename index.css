@@ -187,6 +187,33 @@ a{
     background-repeat: no-repeat;
     height: 100%;
 }
+.event-container {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    left: 14.5%;
+    top: 17.9%;
+}
+.event-image {
+    max-width: 300px;
+    height: auto;
+}
+.time-remaining {
+    position: absolute;
+    bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    right: 3px;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+.event-title{
+    position: absolute;
+    top: -44px;
+    color: white;
+    text-shadow: 2px 1px 0 #000, -2px -2px 0 #000, 2px -1px 0 #000, -1px 1px 0 #000;
+}
 
 @media screen and (max-width: 1366px) {
     .contEnlaces{
@@ -208,6 +235,10 @@ a{
     }
     .cont p{
         font-size: 1.1rem;
+    }
+    .event-container{
+        left: 14.4%;
+        top: 14.3%;
     }
 }
 @media (max-width: 768px) {
@@ -263,5 +294,9 @@ a{
         width: 42%;
         font-size: 0.54rem;
         height: 44%;
+    }
+    .event-container{
+        justify-content: center;
+        left: unset;
     }
 }
