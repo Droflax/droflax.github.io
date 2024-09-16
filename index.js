@@ -8,14 +8,15 @@ async function fetchEventData() {
         if (response.ok) {
             const data = await response.json();
             console.log('Datos recibidos:', data); // Agregado para depuración
-            event_starting = event_time + timedelta(minutes=5);
+            //event_starting = data.time_remaining + timedelta(minutes=5);
             
             // Actualiza la imagen del evento
             document.getElementById('event-image').src = data.event_image;
             
             // Formatea y muestra el tiempo restante
-            if (data.time_remaining === 0) {
+            if (parseInt(data.time_remaining) <= 0) {
                 document.getElementById('event-time').textContent = "AHORA!";
+                return
             } else if(data.event_image == 'https://wiki.gla.com.br/images/a/a5/AnyEvent.png') {
                 document.getElementById('event-title').textContent = "No hay eventos";
             }else{
