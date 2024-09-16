@@ -8,6 +8,7 @@ async function fetchEventData() {
         if (response.ok) {
             const data = await response.json();
             console.log('Datos recibidos:', data); // Agregado para depuración
+            event_starting = event_time + timedelta(minutes=5);
             
             // Actualiza la imagen del evento
             document.getElementById('event-image').src = data.event_image;
@@ -15,7 +16,9 @@ async function fetchEventData() {
             // Formatea y muestra el tiempo restante
             if (data.time_remaining === 0) {
                 document.getElementById('event-time').textContent = "AHORA!";
-            } else {
+            } else if(data.event_image == 'https://wiki.gla.com.br/images/a/a5/AnyEvent.png') {
+                document.getElementById('event-title').textContent = "No hay eventos";
+            }else{
                 document.getElementById('event-time').textContent = formatTimeRemaining(parseInt(data.time_remaining));
             }
         } else {
@@ -48,6 +51,3 @@ function formatTimeRemaining(minutes) {
 
 // Configura el intervalo para actualizar los datos cada minuto
 setInterval(fetchEventData, 60000); // 60000 ms = 1 minuto
-
-// Llama a la función cuando la página se haya cargado
-window.onload = fetchEventData;
