@@ -169,13 +169,11 @@ function handleFilterButtonClick(filter, button) {
     toggleFilter(filter);
     filterChars();
 
-    // Reset styles for all buttons
     var allButtons = document.querySelectorAll('.cont');
     allButtons.forEach(function (btn) {
-        btn.classList.remove('bordeCont'); // Remover la clase 'bordeCont' de todos los botones
+        btn.classList.remove('bordeCont');
     });
 
-    // Apply styles to the active button
     if (activeFilter === filter) {
         button.classList.add('bordeCont');
     }else{

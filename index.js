@@ -1,5 +1,4 @@
-// Actualiza los datos cada 30 segundos
-fetchEventData();  // Llama a la función inmediatamente al cargar la página
+fetchEventData();
 
 async function fetchEventData() {
     try {
@@ -7,13 +6,10 @@ async function fetchEventData() {
         
         if (response.ok) {
             const data = await response.json();
-            console.log('Datos recibidos:', data); // Agregado para depuración
             //event_starting = data.time_remaining + timedelta(minutes=5);
             
-            // Actualiza la imagen del evento
             document.getElementById('event-image').src = data.event_image;
             
-            // Formatea y muestra el tiempo restante
             if (parseInt(data.time_remaining) <= 0) {
                 document.getElementById('event-time').textContent = "AHORA!";
                 return
@@ -30,9 +26,7 @@ async function fetchEventData() {
     }
 }
 
-// Función para formatear el tiempo restante
 function formatTimeRemaining(minutes) {
-    // Calcula horas y minutos
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
 
@@ -50,5 +44,4 @@ function formatTimeRemaining(minutes) {
     return timeString || '0 minutos';
 }
 
-// Configura el intervalo para actualizar los datos cada minuto
-setInterval(fetchEventData, 60000); // 60000 ms = 1 minuto
+setInterval(fetchEventData, 60000);
