@@ -18,7 +18,7 @@ async function fetchEventData() {
                 document.getElementById('event-time').textContent = "AHORA!";
                 return
             } else if(data.event_image == 'https://wiki.gla.com.br/images/a/a5/AnyEvent.png') {
-                document.getElementById('event-title').textContent = "No hay eventos";
+                document.getElementById('event-time').textContent = data.time_remaining;
             }else{
                 document.getElementById('event-time').textContent = formatTimeRemaining(parseInt(data.time_remaining));
             }
