@@ -1,0 +1,832 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+:root {
+    --background: #03305e;
+    --border: #5c7292;
+    --foreground: #0a4d8b;
+}
+
+
+html, body {
+    width: 100svw;
+    height: 100svh;
+    margin: 0;
+}
+
+.background {
+    background-color: var(--background);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.patient-number{
+    margin-block-start: -4%;
+    margin-block-end: 5%;
+}
+
+.patient-details {
+    width: 51%;
+    height: 84%;
+    margin-left: 22%;
+    text-align: -webkit-center;
+    display: flex;
+    justify-content: space-around;
+}
+.ingredientes-titulo {
+    flex-basis: 100%;  /* Ocupa todo el ancho */
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.patient-details .ingredientes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;/*justify-content: flex-start;*/
+    max-width: 557px;
+    flex-wrap: wrap;
+    background-color: var(--foreground);
+    border: 1px solid var(--border);
+    border-radius: 1vh;
+    margin-top: 2%;
+}
+
+.ingrediente-container{
+    /*margin-right: 2.5%;*/
+    width: 92px;
+    height: 118px;
+    text-align: center;
+    /*min-width: 60px;*/
+    flex: 1 0 64px;/*flex: 0 0 64px;*/
+}
+
+.ingrediente-container p{
+    margin-block: 0%;
+    margin-bottom: 6%;
+}
+
+.remedio-container{
+    background-color: var(--foreground);
+    border: 1px solid var(--border);
+    border-radius: 1vh;
+    margin-top: 6%;
+    width: 7vw;
+}
+
+.remedio-container h3{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.remedio-container p{
+    margin-block: 0%;
+    margin-bottom: 6%;
+}
+.ubicacion-container{
+    margin-inline-end: 10%;
+}
+
+.ubicacion-container > img{
+    width: 400px;
+    height: 350px;
+}
+
+/* Estilo del contenedor */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background-color: #00ffdc3d;
+    box-shadow: 0 0 0 3px #ffffff61;
+    border-radius: 12%;
+}
+
+.thumbnail-image:hover{
+    transform: scale(1.05);
+}
+
+/* Estilo de la miniatura */
+.thumbnail-image {
+    width: 130px;
+    transition: transform 0.3s ease;
+}
+
+/* Estilo del overlay (fondo oscuro) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.image-container h3{
+    margin-block: 9%;
+}
+
+/* Imagen ampliada */
+.enlarge {
+    width: 65%; /* Ajusta el tamaño de la imagen ampliada */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.pisos{
+    position: absolute;
+    right: 4.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 34%;
+}
+
+/* Estilo para el nuevo contenedor de paciente */
+.patient-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.patient-view.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#close-patient-view{
+    background-color: #ff7676;
+    border: none;
+    color: white;
+    padding-block: 0.5%;
+    padding-inline: 0.7%;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 6.5%;
+    top: 10%;
+    box-shadow: 0 0 0 3px #ffa9a9;
+}
+
+#close-patient-view:hover{
+    scale: 1.05;
+}
+
+#close-patient-view i{
+    font-size: 1.4vw;
+}
+
+.patient-info {
+    text-align: center;
+    width: 33%;
+    height: 90%;
+    left: 4%;
+    bottom: -2%;
+    position: absolute;
+}
+.patient-info .title{
+    font-size: 1.6rem;
+    width: unset;
+    color: #ffffff;
+}
+
+.patient-info img {
+    width: 74%;
+    height: 67%;
+    margin-bottom: 20px;
+    border-radius: 11%;
+    background-color: white;
+    padding-right: 0%;
+    object-fit: cover;
+    object-position: -18px -23px;
+    padding-top: 5%;
+    margin-left: 4%;
+    box-shadow: 0 0 0 3px #539bc5;
+}
+
+.arrow-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding-block: 0.6%;
+    padding-inline: 0.7%;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 6%;
+    bottom: 12%;
+    box-shadow: 0 0 0 3px #ffffffab;
+}
+
+.arrow-button:hover {
+    scale: 1.05;
+}
+
+.arrow-button i{
+    font-size: 2vw;
+}
+
+.section {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-y: auto;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+}
+
+.main {
+    background-color: var(--foreground);
+    width: 95%;
+    height: 93%;
+    margin-bottom: 1.2%;
+    border: 1px solid var(--border);
+    border-radius: 3vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 0;
+    gap: 10px;
+}
+
+.search-bar {
+    display: flex;
+    margin-inline: 1.2%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.search-bar>div:hover {
+    cursor: pointer;
+}
+
+.chars-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    overflow-y: scroll;
+    box-shadow: 0 0 0 1px var(--border);
+    border-radius: 3vh;
+    padding: 1px;
+}
+
+
+.chars-container::-webkit-scrollbar {
+    width: 1vw;
+}
+
+.chars-container::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+.chars-container::-webkit-scrollbar-thumb {
+    background-color: var(--foreground);
+    border-radius: 3vh;
+    border: 3px solid var(--background);
+}
+
+
+.chars {
+    /* display: grid; */
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    /* grid-template-columns: repeat(auto-fit, 140px); */
+    padding: 3px;
+    gap: 10px;
+    margin-left: 10px;
+    flex-direction: row;
+}
+
+.char {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    height: 205px;
+    width: 162px;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+    user-select: none;
+    background-position-x: 52%;
+    background-position-y: 27%;
+    background-size: 150%;
+    border-radius: 5%;
+    margin-bottom: 1.5%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+@keyframes cambiarColor {
+    0% {
+      background-color: rgb(255, 244, 218); /* Rojo */
+    }
+    50% {
+      background-color: rgb(255, 208, 0); /* Azul */
+    }
+    100% {
+      background-color: rgb(255, 244, 218); /* Rojo */
+    }
+}
+
+.char:hover {
+    transform: scale(1.05);
+}
+
+.audio-button{
+    width: 4.219%;
+    height: 8.545%;
+    border-radius: 60%;
+    position: absolute;
+    left: 10%;
+    bottom: 24.7%;
+    animation: cambiarColor 1.5s infinite;
+}
+
+.audio-button i{
+    font-size: 2.2vw;
+    color: cornflowerblue;
+    margin-right: 13%;
+    margin-bottom: 4%;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 81%);
+}
+
+.audio-button:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.audio-icon {
+    position: absolute;
+    bottom: 3%;
+    left: 2%;
+    width: 40px;
+    height: 40px;
+    background-image: url('../Img/kureha/audio.png');
+    background-size: contain;
+    cursor: pointer;
+    z-index: 2; /* Coloca el icono sobre el char */
+    transition: transform 0.3s ease; /* Efecto de agrandado del icono */
+}
+
+.audio-icon:hover {
+    transform: scale(1.3); /* Agrandar solo el icono de audio */
+    pointer-events: auto; /* Asegura que sea interactuable */
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: flex-end;
+    user-select: none;
+    margin-top: 0.5%;
+    height: 300px;
+    width: 240px;
+    background-color: #f6fbf3;
+    border-radius: 12%;
+    contain: content;
+    box-shadow: 0 0 0 4px #00000075;
+}
+.cont img{
+    width: 220px;
+    height: 286px;
+}
+
+
+.title {
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    margin: 0;
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.firma {
+    position:fixed;
+    color: rgb(235, 41, 41);
+    font-family: "Roboto", sans-serif;
+    bottom:0;
+    width: 4%;
+    margin-inline: 46%;
+    text-align-last: center;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.rot-bt {
+    position:absolute;
+    left: 0;
+    top: 0.3%;
+    margin: 1.2%;
+    background-color: #03305e;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(1.2);
+    border: 2px solid #5c7292;
+    border-radius: 100%;
+    flex-direction: column;
+    user-select: none;
+    z-index: 99;
+}
+
+.rot-bt span{
+    font-weight: 200;
+    font-style: normal;
+    font-size: 207%;
+    opacity: 90%;
+}
+
+.rot-bt:hover {
+    cursor: pointer;
+    filter: brightness(2);
+}
+
+.bordeCont{
+    border: 1px solid white;
+    border-radius: 1vw;
+    background-color:#0d66b9;
+}
+.char p{
+    background-color: #000000c7;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: #ffffff;
+}
+.barramedia{
+    width: 2.5%;
+    background-color: #0000006e;
+    scale: 1.009;
+}
+.titulosection{
+    text-align: center;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    width: 75%;
+}
+
+@media screen and (max-width: 1366px) {
+    .cont{
+        height: 27vh;
+        width: 13%;
+        margin-top: 1%;
+    }
+
+    .cont img {
+        width: 250px;
+        margin-bottom: -48.5%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .cont .title{
+        width: 100%;
+        background-color: #00000096;
+        color: white;
+        font-size: 1.2vw;
+    }
+    .titulosection {
+        text-align: center;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em;
+        width: 85%;
+    }
+
+    .char {
+        height: 162px;
+        width: 121px;
+    }
+    .audio-icon {
+        position: absolute;
+        top: 2%;
+        right: 6%;
+        width: 33px;
+        height: 33px;
+        background-image: url(../Img/kureha/audio.png);
+        background-size: contain;
+        cursor: pointer;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+    .patient-info {
+        text-align: center;
+        width: 32%;
+        height: 90%;
+        left: 0%;
+        bottom: -2%;
+        position: absolute;
+    }
+    .patient-info img {
+        width: 74%;
+        height: 67%;
+        margin-bottom: 20px;
+        border-radius: 11%;
+        background-color: white;
+        padding-right: 0%;
+        object-fit: cover;
+        object-position: -34px 1px;
+        padding-top: 5%;
+        margin-left: 4%;
+        box-shadow: 0 0 0 3px #539bc5;
+    }
+
+    .ubicacion-container > img {
+        width: 320px;
+        height: 271px;
+    }
+
+    .remedio-container {
+        width: 9vw;
+    }
+
+    .pisos {
+        right: 4%;
+        height: 40%;
+    }
+
+    #close-patient-view {
+        right: 3.5%;
+        top: 4%;
+    }
+    #close-patient-view i {
+        font-size: 1.6vw;
+    }
+
+    .arrow-button {
+        right: 7.5%;
+        bottom: 9%;
+    }
+
+    .ingrediente-container {
+        height: 110px;
+    }
+    .patient-details {
+        width: 55%;
+        margin-left: 15.7%;
+    }
+    .audio-button {
+        left: 4.7%;
+        bottom: 26.4%;
+    }
+
+}
+@media (max-width: 768px) {
+    .main{
+        width: 100%;
+        height: 95%;
+        border: 1px solid var(--border);
+        border-radius: unset;
+        display: flex;
+        flex-direction: column;
+        padding: unset;
+        padding-top: unset;
+        gap: 10px;
+        top: 0;
+        position: absolute;
+    }
+    .rot-bt{
+        z-index: 7;
+        left: 0%;
+        top: 0%;
+    }
+    .search-bar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 40%;
+        margin-top: 10%;
+    }
+
+    .cont{
+        height: 12vh;
+        width: 22%;
+        margin-top: -6%;
+    }
+
+    .chars{
+        padding: unset;
+        grid-template-columns: repeat(auto-fit, 45px);
+        margin-inline: 5px;
+        margin-top: -2%;
+        flex-direction: column;
+    }
+    .char{
+        height: 130px;
+        width: 88px;
+    }
+    .cont img{
+        width: 126px;
+        margin-bottom: -68.5%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .barramedia{
+        width: 100%;
+        display: list-item;
+        background-color: #0000006e;
+        scale: 1.009;
+        margin-bottom: -4%;
+        margin-top: 2%;
+    }
+    .patient-info{
+        text-align: center;
+        width: 58%;
+        height: 35%;
+        left: -2%;
+        top: 8%;
+        position: absolute;
+    }
+
+    #close-patient-view {
+        background-color: #ff7676;
+        border: none;
+        color: white;
+        padding-block: 2.6%;
+        padding-inline: 3.6%;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        right: 2.5%;
+        top: 1.4%;
+        box-shadow: 0 0 0 3px #ffa9a9;
+    }
+
+    .patient-view{
+        overflow: auto;
+        background: rgb(67 67 67);
+    }
+
+    .image-container{
+        cursor: auto;
+    }
+
+    .patient-details {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 51vh;
+        text-align: -webkit-center;
+        display: flex;
+        flex-direction: row;
+        margin-left: 0%;
+        margin-bottom: 0%;
+        justify-content: space-around;
+    }
+    
+    .patient-details .ingredientes{
+        max-width: 87%;
+        max-height: 29%;
+    }
+
+    .remedio-container img, .ingredientes img{
+        margin-block: -3%;
+    }
+
+    .ubicacion-container {
+        margin-inline-end: 0;
+    }
+
+    .remedio-container{
+        width: 63%;
+        margin-bottom: 6%;
+    }
+
+    .arrow-button {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding-block: 2.6%;
+        padding-inline: 2.7%;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        right: 4%;
+        bottom: 52.5%;
+        box-shadow: 0 0 0 3px #ffffffab;
+    }
+
+    .arrow-button i {
+        font-size: 5vw;
+    }
+
+    .pisos {
+        position: absolute;
+        right: 4.5%;
+        top: 9%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 31%;
+    }
+
+    #close-patient-view i {
+        font-size: 4.8vw;
+    }
+
+    .thumbnail-image {
+        width: 119px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .enlarge{
+        width: 102%;
+    }
+
+    .patient-info img{
+        width: 73%;
+        height: 67%;
+        margin-bottom: 20px;
+        border-radius: 11%;
+        background-color: white;
+        padding-right: 0%;
+        object-fit: cover;
+        object-position: -10px -7px;
+    }
+
+    .patient-number{
+        font-size: 1.4em;
+    }
+
+    .titulosection{
+        width: 90%;
+    }
+    
+    .cont .title{
+        width: 100%;
+        background-color: #00000096;
+        color: white;
+        font-size: 2.5vw;
+    }
+
+    .audio-button {
+        width: 10.024vw;
+        height: 9.23vw;
+        left: 7.2vw;
+        top: -45vw;
+    }
+
+    .audio-button i {
+        font-size: 5.2vw;
+    }
+
+    .chars-container{
+        padding: unset;
+        border-radius: 2vh;
+    }
+
+    .chars-container::-webkit-scrollbar {
+        width: inherit;
+    }
+    .ubicacion-container > img {
+        width: 100%;
+        height: auto;
+    }
+    .ubicacion-container > h3{
+        height: 6%;
+        margin-top: -8%;
+        margin-bottom: 4%;
+        display: grid;
+        place-content: center;
+    }
+}
