@@ -17,6 +17,43 @@
             <img id="event-image" class="event-image" src="Img/main/Event_race.png" alt="Evento">
             <div id="event-time" class="time-remaining">Cargando...</div>
         </div>
+
+        <!-- Botón para abrir el modal -->
+        <button id="registro-actividad">Registro de Actividades</button>
+
+        <div id="overlay" class="overlay" style="display: none;" onclick="cerrarModal()"></div>
+
+        <!-- Modal -->
+        <div id="modal-cuentas" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <button class="close"><i class="fa-solid fa-xmark"></i></button>
+                <h2 id="modal-title">Cuentas</h2>
+                <div id="account-list"></div>
+                <button id="add-new-account">Agregar una cuenta</button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal-registro" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <button class="close2"><i class="fa-solid fa-xmark"></i></button>
+                <h2 id="modal-title">Agregar Cuenta</h2>
+                <input id="account-name" type="text" placeholder="Nombre de cuenta">
+                <div id="account-icons">
+                    <p id="select-icon-title">Seleccionar Ícono</p>
+                    <img id="selected-icon" src="Img/count/Medals/NoCategory.png" alt="Ícono seleccionado">
+                </div>
+                <button id="add-account">Agregar Cuenta</button>
+            </div>
+        </div>
+        <div id="image-gallery" style="display: none;"></div>
+
+        <!-- Espacio para mostrar detalles de la cuenta seleccionada -->
+        <div id="activity-details"></div>
+        <button id="btn-agregar-actividad" style="display: none;">Agregar Actividad</button>
+
+        
+
         <div class="main">
             <div class="search-bar">
                 <a class="cont"  id="foxycount" href="foxycount.html">
