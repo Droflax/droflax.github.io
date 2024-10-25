@@ -252,14 +252,15 @@ body {
         background-position: center;
         justify-content: center;
         align-items: center;
-        scale: 1.16;
+        scale: 1.36;
         z-index: 0;
         top: -0.5%;
-        left: -3%;
+        left: -4%;
     }
     .guide {
         position: absolute;
-        right: 5.7%;
+        right: 11.7%;
+        font-size: 0.95vw;
         top: 21%;
         background-color: #401a00;
         background-image: url(https://www.transparenttextures.com/patterns/wood-pattern.png);
@@ -267,9 +268,13 @@ body {
         color: white;
         padding: 5px 6px;
         height: 19.5vw;
-        width: 17vw;
+        width: 15vw;
         border-radius: 0.6vw;
         box-shadow: 0 0 0 3px #180000e8;
+    }
+    .main-memory{
+        left: 2px;
+        top: 15px;
     }
 }
 
