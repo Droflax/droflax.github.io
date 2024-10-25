@@ -144,3 +144,7 @@ closeButton.addEventListener('click', () => {
     guide.classList.add('hidden');
     changeScale(); // Llama a la función para cambiar el scale si se cumplen las condiciones
 });
+
+document.querySelector('.rot-bt').addEventListener('click', () => {
+    window.location.replace('index.html')
+})
