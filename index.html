@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foxy Count</title>
     <link rel="icon" href="Img/ico.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/index.min.css?v=1.2">
+    <link rel="stylesheet" href="css/index.min.css?v=1.3">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
@@ -48,9 +48,87 @@
         </div>
         <div id="image-gallery" style="display: none;"></div>
 
+        <!-- Modal Diamantes-->
+        <div id="modal-diamantes" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <button class="close3"><i class="fa-solid fa-xmark"></i></button>
+            <div id="diamante-icons">
+                <div class="personaje-diamante" id="kuma">
+                    <img id="diamante-icon" src="Img/count/Medals/Kuma.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Kuma</p>
+                </div>
+                <div class="personaje-diamante" id="boa">
+                    <img id="diamante-icon" src="Img/count/Medals/Hancock.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Boa Hancock</p>
+                </div>
+                <div class="personaje-diamante" id="kizaru">
+                    <img id="diamante-icon" src="Img/count/Medals/Kizaru.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Kizaru</p>
+                </div>
+                <div class="personaje-diamante" id="doflamingo">
+                    <img id="diamante-icon" src="Img/count/Medals/Doflamingo.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Doflamingo</p>
+                </div>
+                <div class="personaje-diamante" id="mihawk">
+                    <img id="diamante-icon" src="Img/count/Medals/Mihawk.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Mihawk</p>
+                </div>
+                <div class="personaje-diamante" id="ivankov">
+                    <img id="diamante-icon" src="Img/count/Medals/Ivankov.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Ivankov</p>
+                </div>
+                <div class="personaje-diamante" id="enel">
+                    <img id="diamante-icon" src="Img/count/Medals/Enel.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Enel</p>
+                </div>
+                <div class="personaje-diamante" id="jinbe">
+                    <img id="diamante-icon" src="Img/count/Medals/Jinbe.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Jinbe</p>
+                </div>
+                <div class="personaje-diamante" id="barbanegra">
+                    <img id="diamante-icon" src="Img/count/Medals/Barbanegra.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Barba Negra</p>
+                </div>
+                <div class="personaje-diamante" id="shanks">
+                    <img id="diamante-icon" src="Img/count/Medals/Shanks.png">
+                    <p id="contador">0/5</p>
+                    <p id="diamante-title">Shanks</p>
+                </div>
+            </div>
+            <div id="oros-icons">
+                <div id="personaje-oros">
+                    <img id="oros-icon" src="Img/count/Medals/NoCategory.png">
+                    <p id="contador-medallas">0/540</p>
+                    <p id="oros-title">Random</p>
+                    <div class="range">
+                        <span class="material-symbols-sharp">expand_circle_down</span>
+                        <span class="material-symbols-sharp">expand_circle_up</span>
+                    </div>
+                    <div class="tier">
+                        <img id="star" src="Img/main/stargold.png">
+                        <img id="star" src="Img/main/stargold.png">
+                        <img id="star" src="Img/main/stargold.png">
+                        <img id="star" src="Img/main/stargold.png">
+                        <img id="star" src="Img/main/stargold.png">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
         <!-- Espacio para mostrar detalles de la cuenta seleccionada -->
         <div id="activity-details"></div>
         <button id="btn-agregar-actividad" style="display: none;">Agregar Actividad</button>
+        <button id="btn-pj-diamante" style="display: none;">Desbloqueo PJ Diamante</button>
 
         
 
@@ -109,4 +187,5 @@
     </a>
 </body>
 <script src="js/index.min.js"></script>
+<script src="js/chars.min.js"></script>
 </html>
