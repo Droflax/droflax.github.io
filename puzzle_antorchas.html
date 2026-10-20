@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solucionador Antorchas Noland GLA</title>
+    <link rel="icon" href="Img/ico.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/puzzle_antorchas.min.css">
+</head>
+<body>
+    <div class="rot-bt">
+        <span class="material-symbols-sharp" style="color: white;">
+            home
+        </span>
+    </div>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-decoration left"></div>
+            <h1 class="title-font">
+                <i class="fa-solid fa-fire-flame-curved flame-header"></i>
+                Solucionador Puzzle de Noland
+                <i class="fa-solid fa-fire-flame-curved flame-header"></i>
+            </h1>
+            <div class="header-decoration right"></div>
+            <p class="subtitle">Solucionador para el puzzle de las 8 antorchas de Noland en Grand Line Adventures.</p>
+            <p class="subtitle">Ajusta el tablero para que coincida con tu juego.</p>
+
+            <!-- Botón Tutorial -->
+            <button class="btn-tutorial" onclick="openTutorial()">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Tutorial
+            </button>
+        </header>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-badge" id="status-badge">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Modo Edición
+            </div>
+            <div class="mode-toggle">
+                <span class="mode-label" id="mode-label">Manual</span>
+                <button class="btn-mode" onclick="toggleInteractivityMode()">
+                    <i class="fa-solid fa-right-left"></i> Cambiar modo
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            
+            <!-- Left Panel: Interactive Board -->
+            <div class="panel board-panel">
+                <div class="panel-header">
+                    <i class="fa-solid fa-chess-board"></i>
+                    <h2>Tablero Interactivo</h2>
+                </div>
+
+                <div class="board-wrapper">
+                    <!-- Stone Floor Background -->
+                    <div class="stone-floor">
+
+                        <!-- Torch Grid -->
+                        <div class="torch-grid">
+                            <!-- Top Row -->
+                            <div class="torch-slot top-row">
+                                <div class="torch-container" id="torch-TL" onclick="handleTorchClick('TL')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <defs>
+                                                            <radialGradient id="flameGrad" cx="50%" cy="60%" r="50%">
+                                                                <stop offset="0%" stop-color="#fef08a"/>
+                                                                <stop offset="30%" stop-color="#fbbf24"/>
+                                                                <stop offset="60%" stop-color="#f59e0b"/>
+                                                                <stop offset="100%" stop-color="#dc2626"/>
+                                                            </radialGradient>
+                                                            <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+                                                                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.8"/>
+                                                                <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+                                                            </radialGradient>
+                                                        </defs>
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-TL">1</div>
+                                </div>
+                            </div>
+
+                            <div class="torch-slot top-row">
+                                <div class="torch-container" id="torch-TC" onclick="handleTorchClick('TC')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-TC">1</div>
+                                </div>
+                            </div>
+
+                            <div class="torch-slot top-row">
+                                <div class="torch-container" id="torch-TR" onclick="handleTorchClick('TR')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-TR">1</div>
+                                </div>
+                            </div>
+
+                            <!-- Middle Row (L and R only) -->
+                            <div class="torch-slot middle-row left-side">
+                                <div class="torch-container" id="torch-L" onclick="handleTorchClick('L')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-L">1</div>
+                                </div>
+                            </div>
+
+                            <div class="torch-slot middle-row center-empty">
+                                <div class="lock-container" id="puzzle-lock">
+                                    <i class="fa-solid fa-lock lock-icon" id="lock-icon"></i>
+                                    <div class="lock-glow"></div>
+                                </div>
+                            </div>
+
+                            <div class="torch-slot middle-row right-side">
+                                <div class="torch-container" id="torch-R" onclick="handleTorchClick('R')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-R">1</div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Row -->
+                            <div class="torch-slot bottom-row">
+                                <div class="torch-container" id="torch-BL" onclick="handleTorchClick('BL')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-BL">1</div>
+                                </div>
+                            </div>
+
+                            <div class="torch-slot bottom-row">
+                                <div class="torch-container" id="torch-BC" onclick="handleTorchClick('BC')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-BC">1</div>
+                                </div>
+                            </div>
+
+                            <div class="torch-slot bottom-row">
+                                <div class="torch-container" id="torch-BR" onclick="handleTorchClick('BR')">
+                                    <div class="torch-base">
+                                        <div class="torch-bowl">
+                                            <div class="flame-wrapper">
+                                                <div class="flame-icon">
+                                                    <svg viewBox="0 0 24 32" xmlns="http://www.w3.org/2000/svg">
+                                                        <ellipse cx="12" cy="28" rx="8" ry="3" fill="url(#flameGlow)" class="flame-glow-ellipse"/>
+                                                        <path d="M12 2 C12 2 6 10 6 18 C6 22 9 26 12 26 C15 26 18 22 18 18 C18 10 12 2 12 2Z" fill="url(#flameGrad)" class="flame-shape"/>
+                                                        <path d="M12 8 C12 8 9 13 9 18 C9 21 10.5 23 12 23 C13.5 23 15 21 15 18 C15 13 12 8 12 8Z" fill="#fef08a" opacity="0.7" class="flame-inner"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="torch-stem"></div>
+                                        <div class="torch-stand"></div>
+                                    </div>
+                                    <div class="step-badge hidden" id="badge-BR">1</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="btn-action btn-off" onclick="setAllTorches(false)">
+                        <i class="fa-solid fa-power-off"></i> Apagar Todas
+                    </button>
+                    <button class="btn-action btn-on" onclick="setAllTorches(true)">
+                        <i class="fa-solid fa-fire"></i> Encender Todas
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Solution -->
+            <div class="panel solution-panel">
+                <div class="panel-header">
+                    <i class="fa-solid fa-scroll"></i>
+                    <h2>Resolución</h2>
+                </div>
+
+                <div class="solve-info">
+                    <p>Haz clic para calcular qué antorchas debes accionar exactamente para <strong>APAGAR TODAS</strong> las antorchas y completar el puzzle.</p>
+                </div>
+
+                <button class="btn-solve" onclick="solvePuzzle()">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    CALCULAR SOLUCIÓN
+                </button>
+
+                <div class="solution-output">
+                    <div class="solution-header">
+                        <span class="solution-title">
+                            <i class="fa-solid fa-list-check"></i> Pasos a Seguir
+                        </span>
+                        <span class="step-count-badge" id="step-count">0 pasos</span>
+                    </div>
+                    <div id="solution-container" class="solution-container custom-scrollbar">
+                        <div class="empty-solution">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Configura el estado de las antorchas y presiona "Calcular Solución".
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Controls -->
+                <div class="sim-controls hidden" id="sim-controls">
+                    <div class="sim-progress-bar">
+                        <span class="sim-progress-label">Ant.</span>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="sim-progress-fill"></div>
+                        </div>
+                        <span class="sim-progress-text" id="sim-progress">Paso 0 / 0</span>
+                    </div>
+                    <div class="sim-buttons">
+                        <button class="btn-sim" id="prev-btn" onclick="prevStep()" disabled>
+                            <i class="fa-solid fa-backward-step"></i> Ant.
+                        </button>
+                        <button class="btn-sim btn-sim-next" id="next-btn" onclick="nextStep()">
+                            Sig. <i class="fa-solid fa-forward-step"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="firma" onclick="location.href='https://www.youtube.com/@Droflax/videos';">
+        <p>Droflax</p>
+    </div>
+
+    <!-- Tutorial Modal -->
+    <div class="tutorial-overlay hidden" id="tutorial-overlay" onclick="closeTutorialOutside(event)">
+        <div class="tutorial-modal">
+            <div class="tutorial-header">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Tutorial: Cómo Resolver el Puzzle</h2>
+                <button class="btn-close-tutorial" onclick="closeTutorial()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="tutorial-content custom-scrollbar" id="tutorial-content">
+                <!-- Step 1 -->
+                <div class="tutorial-step" data-step="1">
+                    <div class="step-header">
+                        <span class="step-number">1</span>
+                        <h3>Entender el Puzzle</h3>
+                    </div>
+                    <div class="step-body">
+                        <p>En el juego tienes <strong>8 antorchas</strong> dispuestas así:</p>
+                        <div class="torch-diagram">
+                            <div class="diagram-row">
+                                <div class="diagram-torch">TL</div>
+                                <div class="diagram-torch">TC</div>
+                                <div class="diagram-torch">TR</div>
+                            </div>
+                            <div class="diagram-row">
+                                <div class="diagram-torch" style="translate: -40%;">L</div>
+                                <div class="diagram-empty">🔒</div>
+                                <div class="diagram-torch" style="translate: 40%;">R</div>
+                            </div>
+                            <div class="diagram-row">
+                                <div class="diagram-torch">BL</div>
+                                <div class="diagram-torch">BC</div>
+                                <div class="diagram-torch">BR</div>
+                            </div>
+                        </div>
+                        <p><strong>Objetivo:</strong> Apagar todas las antorchas encendidas.</p>
+                        <p class="step-note">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Al hacer clic en una antorcha, se apaga/enciende ella y sus vecinas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="tutorial-step" data-step="2">
+                    <div class="step-header">
+                        <span class="step-number">2</span>
+                        <h3>Observar tu Juego Real</h3>
+                    </div>
+                    <div class="step-body">
+                        <p>Mira tu pantalla del juego para ver que antorchas estan <strong>encendidas</strong> (con fuego) y cuáles <strong>apagadas</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="tutorial-step" data-step="3">
+                    <div class="step-header">
+                        <span class="step-number">3</span>
+                        <h3>Configurar el Tablero</h3>
+                    </div>
+                    <div class="step-body">
+                        <p>En el <strong>Tablero Interactivo</strong> de esta herramienta:</p>
+                        <ol>
+                            <li>Asegúrate de estar en <strong>Modo Edición</strong> (botón "Cambiar modo" si es necesario)</li>
+                            <li>Haz clic en cada antorcha para <strong>encenderla o apagarla</strong> para que queden igual que en tu juego real</li>
+                        </ol>
+                        <div class="highlight-box">
+                            <i class="fa-solid fa-hand-pointer"></i>
+                            <span>Las antorchas encendidas brillan en naranja 🔥</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="tutorial-step" data-step="4">
+                    <div class="step-header">
+                        <span class="step-number">4</span>
+                        <h3>Calcular la Solución</h3>
+                    </div>
+                    <div class="step-body">
+                        <p>Una vez configurado el tablero igual que tu juego:</p>
+                        <ol>
+                            <li>Presiona el botón <strong>"CALCULAR SOLUCIÓN"</strong></li>
+                            <li>La herramienta te mostrará la lista de antorchas que debes presionar en el juego</li>
+                            <li>Verás números en cada antorcha indicando el orden</li>
+                        </ol>
+                        <div class="highlight-box success">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>¡La solución es única y siempre funciona!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="tutorial-step" data-step="5">
+                    <div class="step-header">
+                        <span class="step-number">5</span>
+                        <h3>Aplicar en el Juego</h3>
+                    </div>
+                    <div class="step-body">
+                        <p>Sigue los pasos en orden en tu juego real:</p>
+                        <ol>
+                            <li>Mira la lista de pasos (ej: "1. Presionar: Arriba-Izquierda")</li>
+                            <li>En el juego, haz clic en esa antorcha</li>
+                            <li>Repite con el siguiente paso</li>
+                            <li>¡Todas las antorchas se apagarán y la reliquia se abrirá! 🔓</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="tutorial-step" data-step="6">
+                    <div class="step-header">
+                        <span class="step-number">6</span>
+                        <h3>Modo Simulación (Opcional)</h3>
+                    </div>
+                    <div class="step-body">
+                        <p>Este modo es más que nada para practicar la lógica de como funciona este puzzle:</p>
+                        <ol>
+                            <li>Cambia a <strong>"Modo Juego"</strong> con el botón "Cambiar modo"</li>
+                            <li>El tablero simulará exactamente como funciona el puzzle en el juego</li>
+                            <li>En este modo el candado no estará funcionando, ya que, no es relevante para entender la logica</li>
+                        </ol>
+                        <div class="highlight-box warning">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Este modo es solo para practicar. No afecta tu juego real.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-footer">
+                <button class="btn-tutorial-nav" id="btn-prev-step" onclick="prevTutorialStep()" disabled>
+                    <i class="fa-solid fa-arrow-left"></i> Anterior
+                </button>
+                <div class="step-indicators" id="step-indicators">
+                    <span class="indicator active"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                    <span class="indicator"></span>
+                </div>
+                <button class="btn-tutorial-nav btn-next" id="btn-next-step" onclick="nextTutorialStep()">
+                    Siguiente <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/puzzle_antorchas.min.js"></script>
+</body>
+</html>
