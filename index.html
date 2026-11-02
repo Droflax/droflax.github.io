@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camilo Pereira · Desarrollador backend</title>
+  <meta name="description" content="Portafolio de Camilo Pereira, Ingeniero en Informática. Desarrollo backend y aplicaciones web con PHP, C#/.NET y MySQL.">
+  <!-- Oculta el sitio de buscadores: solo se llega por enlace directo (CV, postulaciones).
+       Si algún día quieres que aparezca en Google, borra esta línea. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#12151a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312151a'/%3E%3Cpath d='M16 22l14 10-14 10' fill='none' stroke='%23ff8a3d' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M36 44h14' stroke='%23ff8a3d' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#inicio" aria-label="Inicio">cp<span class="cursor-mark">_</span></a>
+      <nav aria-label="Principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#stack">Stack</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="hero">
+      <div class="wrap">
+        <div class="terminal" id="terminal" aria-label="Presentación">
+          <p class="t-line"><span class="prompt">camilo@portafolio:~$</span> whoami</p>
+          <h1 class="t-line t-out" data-name>Camilo Pereira</h1>
+          <p class="t-line"><span class="prompt">camilo@portafolio:~$</span> cat rol.txt</p>
+          <p class="t-line t-out role">Ingeniero en Informática. Desarrollo backend y aplicaciones web.</p>
+          <p class="t-line"><span class="prompt">camilo@portafolio:~$</span> <span class="cursor" aria-hidden="true"></span></p>
+        </div>
+
+        <p class="lead">
+          Construyo sistemas con PHP, C#/.NET y bases de datos relacionales, con foco en código mantenible.
+          He rediseñado una intranet corporativa sobre arquitectura HMVC, integrado APIs externas
+          y publicado herramientas web de uso real. Estoy abierto a oportunidades de desarrollo backend.
+        </p>
+
+        <p class="actions">
+          <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+          <a class="btn" href="#contacto">Contactar</a>
+          <a class="btn" id="cv-link" href="cv/CV-Camilo-Pereira.pdf" download hidden>Descargar CV</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="proyectos" class="block">
+      <div class="wrap">
+        <h2><span class="path">~/</span>proyectos</h2>
+
+        <article class="project">
+          <div class="project-meta">
+            <h3>El Manual del GLA</h3>
+            <p class="status status-public">Código público</p>
+          </div>
+          <div class="project-body">
+            <p>
+              Colección de seis herramientas web para jugadores de Grand Line Adventures, un juego de Roblox.
+              Funciona por completo en el navegador, sin servidor propio, y tiene su propia comunidad en Discord.
+            </p>
+            <ul>
+              <li>Filtros combinables por rango, clase, tripulación y color para resolver desafíos de eventos.</li>
+              <li>Solucionador del puzzle de antorchas que calcula qué pulsar y en qué orden, con modo de práctica.</li>
+              <li>Registro semanal de actividades por cuenta, guardado en el navegador con IndexedDB, sin enviar datos a ningún lado.</li>
+              <li>Contador del próximo evento que consulta una API externa, buscador de preguntas en español y portugués, y tutorial guiado.</li>
+              <li>CSS minificado para producción y más de 100 commits de historial.</li>
+            </ul>
+            <p class="tags">HTML5 · CSS3 · JavaScript · IndexedDB · Shepherd.js</p>
+            <p class="links">
+              <a href="manual-gla/">Ir al Sitio</a>
+              <a href="https://github.com/Droflax/manual-gla">Ver código en GitHub</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-meta">
+            <h3>Gamedex</h3>
+            <p class="status status-private">Código privado</p>
+          </div>
+          <div class="project-body">
+            <p>
+              Aplicación de escritorio para Windows, organizada en módulos bajo principios de programación
+              orientada a objetos. Maneja el estado de la aplicación y conserva los datos entre sesiones.
+            </p>
+            <!-- ESPACIO PARA UNA CAPTURA O GIF DE GAMEDEX
+                 1. Guarda la imagen en img/gamedex.png (sin datos personales a la vista).
+                 2. Reemplaza este comentario por:
+                    <figure class="shot"><img src="img/gamedex.png" alt="Pantalla principal de Gamedex" loading="lazy"><figcaption>Pantalla principal.</figcaption></figure>
+            -->
+            <p class="note">Puedo mostrar el código y una demostración en vivo durante una entrevista.</p>
+            <p class="tags">C# · .NET · XAML · WPF · Git</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-meta">
+            <h3>Módulos y bots de automatización</h3>
+            <p class="status status-private">Trabajo colaborativo</p>
+          </div>
+          <div class="project-body">
+            <p>
+              Módulos de datos y lógica dinámica en Lua para plataformas MediaWiki, desarrollados en equipo.
+              También bots comunitarios para Discord y scripts que automatizan tareas repetitivas.
+            </p>
+            <p class="tags">Lua · MediaWiki API · Node.js · Discord</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia" class="block">
+      <div class="wrap">
+        <h2><span class="path">~/</span>experiencia</h2>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Desarrollador de Software, práctica profesional</h3>
+            <p class="job-org">IMPACT LTDA. · Alto Hospicio / Iquique</p>
+            <p class="job-date">Enero a marzo de 2024</p>
+          </div>
+          <ul>
+            <li>Rediseñé la arquitectura web del sistema corporativo Cloud/Intranet con PHP y patrón HMVC, JavaScript, AJAX y MySQL, para mejorar la gestión interna de tareas y reportes de horas.</li>
+            <li>Integré la API de Google Calendar para sincronizar y mostrar de forma interactiva los eventos y reuniones de la empresa.</li>
+            <li>Implementé módulos CRUD para administrar ambientes, precios, noticias y eventos, con validaciones en backend y frontend.</li>
+            <li>Corregí inconsistencias en la base de datos MySQL y optimicé consultas SQL de los sistemas de cotizaciones y reportes.</li>
+            <li>Adapté la plataforma a dispositivos móviles con Bootstrap, diseño responsive y ventanas modales.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head">
+            <h3>Ayudante de Cátedra de Programación</h3>
+            <p class="job-org">Universidad de Tarapacá · Iquique</p>
+            <p class="job-date">Marzo a septiembre de 2018</p>
+          </div>
+          <ul>
+            <li>Di tutorías prácticas de lógica de programación, algoritmos, pseudocódigo y C/C++ a estudiantes de primeros años.</li>
+            <li>Colaboré en la revisión de guías de ejercicios y evaluaciones, y resolví consultas sobre estructuras de datos y de control.</li>
+          </ul>
+        </article>
+
+        <div class="education">
+          <h3>Formación</h3>
+          <dl>
+            <div>
+              <dt>Ingeniería en Informática</dt>
+              <dd>Instituto Profesional Santo Tomás · 2020 a 2024 · Título profesional concluido</dd>
+            </div>
+            <div>
+              <dt>Licenciatura en Ciencias de la Ingeniería</dt>
+              <dd>Universidad de Tarapacá · 2017 a 2019 · Estudios incompletos</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="block">
+      <div class="wrap">
+        <h2><span class="path">~/</span>stack</h2>
+        <dl class="stack">
+          <div><dt>Backend</dt><dd>PHP, C# y .NET, Python, Node.js, Java</dd></div>
+          <div><dt>Web</dt><dd>HTML5, CSS3, JavaScript (ES6+), AJAX, Bootstrap, diseño responsive</dd></div>
+          <div><dt>Bases de datos</dt><dd>MySQL, PostgreSQL, Microsoft SQL Server</dd></div>
+          <div><dt>Arquitectura e integraciones</dt><dd>MVC, HMVC, APIs REST, Google Calendar API, MediaWiki API, bots de Discord</dd></div>
+          <div><dt>Herramientas</dt><dd>Git, GitHub, HeidiSQL, XAMPP</dd></div>
+          <div><dt>También uso</dt><dd>WPF y XAML, C/C++, Lua</dd></div>
+        </dl>
+        <p class="note">Español nativo. Inglés intermedio con dominio técnico.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="block">
+      <div class="wrap">
+        <h2><span class="path">~/</span>contacto</h2>
+        <p class="lead">Si tienes una vacante de desarrollo backend o quieres conversar sobre un proyecto, escríbeme.</p>
+        <ul class="contact">
+          <li><a id="mail-link" href="#contacto" data-needs-js>Correo</a></li>
+          <li><a href="https://www.linkedin.com/in/camilopereiralainati/" rel="noopener" data-linkedin>LinkedIn</a></li>
+          <li><a href="https://github.com/Droflax" rel="noopener" data-github>GitHub</a></li>
+        </ul>
+        <noscript><p class="note">Para ver el correo, activa JavaScript o escríbeme por LinkedIn.</p></noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Camilo Pereira · Alto Hospicio, Chile · <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
